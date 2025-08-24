@@ -2,7 +2,8 @@ package routes
 
 import (
 	"database/sql"
-	"practice-go/controllers"
+
+	"github.com/nanakwafo/go-api/controllers"
 
 	"github.com/gorilla/mux"
 )

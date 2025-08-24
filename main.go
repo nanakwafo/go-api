@@ -1,12 +1,12 @@
 package main
 
 import (
-	"api/routes"
 	"log"
 	"net/http"
-	"practice-go/config"
-	"practice-go/middleware"
-	"practice-go/routes"
+
+	"github.com/nanakwafo/go-api/config"
+	"github.com/nanakwafo/go-api/middleware"
+	"github.com/nanakwafo/go-api/routes"
 )
 
 func main() {

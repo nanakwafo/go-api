@@ -1,12 +1,11 @@
 package controllers
 
 import (
-	"api/models"
 	"database/sql"
 	"encoding/json"
 	"net/http"
 
-	"practice-go/models"
+	"github.com/nanakwafo/go-api/models"
 
 	"github.com/gorilla/mux"
 )
