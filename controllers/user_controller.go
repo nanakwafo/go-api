@@ -11,7 +11,7 @@ import (
 )
 
 // get all users
-func getUsers(db *sql.DB) http.HandlerFunc {
+func GetUsers(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		rows, err := db.Query("SELECT id, name, email FROM users")
 		if err != nil {
@@ -41,7 +41,7 @@ func getUsers(db *sql.DB) http.HandlerFunc {
 	}
 }
 
-func getUser(db *sql.DB) http.HandlerFunc {
+func GetUser(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
 		id := vars["id"]
@@ -63,7 +63,7 @@ func getUser(db *sql.DB) http.HandlerFunc {
 	}
 }
 
-func createUser(db *sql.DB) http.HandlerFunc {
+func CreateUser(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var user models.User
 		if err := json.NewDecoder(r.Body).Decode(&user); err != nil {
@@ -85,7 +85,7 @@ func createUser(db *sql.DB) http.HandlerFunc {
 	}
 }
 
-func updateUser(db *sql.DB) http.HandlerFunc {
+func UpdateUser(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
 		id := vars["id"]
@@ -116,7 +116,7 @@ func updateUser(db *sql.DB) http.HandlerFunc {
 		w.WriteHeader(http.StatusNoContent)
 	}
 }
-func deleteUser(db *sql.DB) http.HandlerFunc {
+func DeleteUser(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
 		id := vars["id"]
